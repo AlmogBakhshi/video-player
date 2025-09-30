@@ -27,6 +27,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoSrc, duration }) => {
             }
             if (videoRef.current.currentTime > (endTime || videoRef.current.duration)) {
                 videoRef.current.pause();
+                videoRef.current.currentTime = endTime;
             }
             setCurrentTime(videoRef.current.currentTime);
         }
